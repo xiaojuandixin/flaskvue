@@ -7,6 +7,7 @@ module.exports = {
       '/api': {
         target: 'http://127.0.0.1:5000/api/',
         changeOrigin: true, // true 表示实现跨域
+        disableHostCheck: true,
         pathRewrite: {
           '^/api': '/' //这里理解成用‘/api’代替target里面的地址
         }
