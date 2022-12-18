@@ -21,3 +21,14 @@ def init_users():
     ]
     for sql in sqls:
         execute_sql(sql)
+
+def init_roles():
+    execute_sql("CREATE TABLE roles (rid INTEGER PRIMARY KEY,uid INTEGER,role TEXT NOT NULL);")
+
+    sqls = [
+        "INSERT INTO roles VALUES (1, 1, 'head');",
+        "INSERT INTO roles VALUES (2, 2, 'head');",
+        "INSERT INTO roles VALUES (3, 3, 'sale');"
+    ]
+    for sql in sqls:
+        execute_sql(sql)

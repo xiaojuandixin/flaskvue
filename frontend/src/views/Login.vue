@@ -3,7 +3,7 @@
     <el-row type="flex" class="row-bg" justify="center">
       <el-col :span="8">
         <el-form ref="form" :model="form" :rules="rules" label-width="80px" class="login-form">
-          <h2>私募管理人监控系统</h2>
+          <h2>私募管理人监控</h2>
           <el-form-item label="用户名" prop="username">
             <el-input v-model="form.username" autofocus></el-input>
           </el-form-item>
