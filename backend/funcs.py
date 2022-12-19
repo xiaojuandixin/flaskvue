@@ -6,8 +6,27 @@ import datetime
 app = Flask(__name__)
 
 # 1. login
-# curl -X POST -H "Content-Type: application/json" -d '{"username":"dixin.fan","password":"dixin"}' http://127.0.0.1:5000/login
-# {"code":200,"msg":"Password is correct"}
+# request
+'''
+{
+  "username": "dixin.fan",
+  "password": "dixin"
+}
+'''
+# response
+'''
+{
+  "code": 200,
+  "data": {
+    "exp": "Mon, 19 Dec 2022 12:56:26 GMT",
+    "name": "dixin.fan",
+    "role": "sale",
+    "uid": 3
+  },
+  "msg": "Password is correct",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjMsIm5hbWUiOiJkaXhpbi5mYW4iLCJyb2xlIjoic2FsZSIsImV4cCI6MTY3MTQ1NDU4Nn0.6xC7p5Jvr8EaEUrUASoIW8p6C1eVBbXDUy83LiZC6bs"
+}
+'''
 @app.route("/api/login", methods=["POST"])
 def login():
     # Retrieve the user data from the request
@@ -22,14 +41,14 @@ def login():
     response = {}
     # If the user doesn't exist, return a 404 error
     if not user:
-        response['msg'] =  "User not found"
+        response['msg'] =  "用户不存在"
         response['code'] = 404
         return response
 
     # If the user exists, check if their password is correct
     db_password = user[2]  # Assume the password is stored in the third column of the user row
     if db_password == password:
-        response['msg'] =  "Password is correct"
+        response['msg'] =  "密码正确"
         response['code'] = 200
 
         uid, name = user[0], user[1]
@@ -46,7 +65,7 @@ def login():
         response['token'] = generate_token(data)
         return response
     else:
-        response['msg'] =  "Password is incorrect"
+        response['msg'] =  "密码错误"
         response['code'] = 401
         return response
 

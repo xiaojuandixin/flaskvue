@@ -21,6 +21,7 @@
 
 <script>
 import axios from 'axios'
+import Cookies from 'js-cookie'
 
 export default {
   data() {
@@ -41,9 +42,24 @@ export default {
   },
   methods: {
     submitForm() {
+      let self = this
       axios.post('/api/login', this.form)
       .then(function (response) {
-        console.log(response);
+        const code = response.data['code']
+        const msg = response.data['msg']
+        if (code === 200) {
+          const info = response.data['data']
+          const jsonData = JSON.stringify(info)
+          Cookies.set('info', jsonData, { expires: 7 });
+          const token = response.data['token']
+          Cookies.set('token', token, { expires: 7 });
+          const role = info['role']
+          if (role === 'head') {
+            self.$router.push('/headhome');
+          }
+        }else {
+          alert(msg)
+        }
       })
       .catch(function (error) {
         console.log(error);

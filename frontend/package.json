@@ -12,6 +12,7 @@
     "bootstrap": "^5.2.3",
     "core-js": "^3.6.5",
     "element-ui": "^2.15.12",
+    "js-cookie": "^3.0.1",
     "less-loader": "^11.1.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
