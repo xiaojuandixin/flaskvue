@@ -53,10 +53,7 @@ export default {
           Cookies.set('info', jsonData, { expires: 7 });
           const token = response.data['token']
           Cookies.set('token', token, { expires: 7 });
-          const role = info['role']
-          if (role === 'head') {
-            self.$router.push('/headhome');
-          }
+          self.$router.push('/home');
         }else {
           alert(msg)
         }

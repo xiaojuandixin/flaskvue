@@ -6,39 +6,14 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/headhome',
-    name: 'HeadHome',
-    component: () => import('../views/HeadHome.vue')
-  },
-  {
     path: '/',
     name: 'Login',
     component: () => import('../views/Login.vue')
   },
-  // {
-  //   // path: '/background',
-  //   path: '/',
-  //   name: 'Background',
-  //   component: () => import('../views/Background.vue')
-  // },
-  // {
-  //   path: '/',
-  //   name: 'Home',
-  //   component: Home
-  // },
   {
     path: '/home',
     name: 'Home',
     component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue')
-  },
-  {
-    path: '*', // * 为通配符，表示其他路径都显示 404 页面
-    component: () => import('../views/NotFound.vue')
   }
 ]
 
