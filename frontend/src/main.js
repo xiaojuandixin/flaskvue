@@ -9,6 +9,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.use(ElementUI)
 
+import VeLine from 'v-charts/lib/line.common'
+Vue.component(VeLine.name, VeLine)
+
 // Vue.use(ElementUI)
 Vue.config.productionTip = false
 
