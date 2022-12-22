@@ -35,7 +35,7 @@
 </template>
     
 <script>
-// import axios from 'axios'
+import axios from 'axios'
 import Cookies from 'js-cookie'
 
   export default {
@@ -53,6 +53,7 @@ import Cookies from 'js-cookie'
     },
     methods: {
       onSubmit() {
+        let self = this
         if (!this.isEmail(this.form.email)) {
           alert("邮箱格式不符合规范")
           return
@@ -60,8 +61,33 @@ import Cookies from 'js-cookie'
         if ((this.form.email !== this.form.origin_email) || (this.form.pwd.length !== 0)) {
           var r = confirm("确认对信息进行修改?");
           if (r == true) {
-              const x = "您按了确认！";
-              console.log(x)
+              const old_token = Cookies.get('token')
+              axios.post('/api/editInfo', {
+                new_email: this.form.email,
+                new_pwd: this.form.pwd,
+                token: old_token
+              })
+              .then(function (response) {
+                const code = response.data['code']
+                const msg = response.data['msg']
+                if (code === 200) {
+                  const new_token = response.data['new_token']
+                  Cookies.set('token', new_token, { expires: 7 });
+
+                  const new_email = response.data['new_email']
+                  const info = JSON.parse(Cookies.get('info'));
+                  info['email'] = new_email
+                  const jsonData = JSON.stringify(info)
+                  Cookies.set('info', jsonData, { expires: 7 });
+                  alert(msg)
+                }else {
+                  alert(msg+",请返回登陆")
+                  self.$router.push('/');
+                }
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
           } else {
               return
           }
