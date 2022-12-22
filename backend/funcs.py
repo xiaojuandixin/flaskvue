@@ -158,3 +158,43 @@ def parse_token(token):
     data = payload
     
   return flag, data
+
+# 3. refreshToken --------------------------------------------------------------------------
+# request
+'''
+{
+  "new_email": "dixin.fan@mail.ustc.edu.cn",
+  "new_pwd": "dixin",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjMsIm5hbWUiOiJkaXhpbi5mYW4iLCJyb2xlIjoic2FsZSIsImVtYWlsIjoiZGl4aW4uZmFuQG1haWwudXN0Yy5lZHUuY24iLCJleHAiOjE2NzE2ODU1MDl9.KGq4_MckpO5lVG5LX5rSGH4lmW_Adz6Ez1zOa4Nk_C0"
+}
+'''
+# response
+'''
+{
+  "code": 401,
+  "msg": "token失效"
+}
+{
+  "code": 200,
+  "msg": "修改成功",
+  "new_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjMsIm5hbWUiOiJkaXhpbi5mYW4iLCJyb2xlIjoic2FsZSIsImVtYWlsIjoiZGl4aW4uZmFuQG1haWwudXN0Yy5lZHUuY24iLCJleHAiOjE2NzE2ODU2NDR9.W49ZqlW2n4x1v_MH5KzMX2egZfcfJTX1txPaPPUr55M"
+}
+'''
+@app.route("/api/refreshToken", methods=["POST"])
+def refresh_token():
+    params = request.get_json()
+    token = params["token"]
+
+    response = {}
+    flag, data = parse_token(token)
+    if not flag:
+      response['msg'] =  "token失效"
+      response['code'] = 401
+      return response
+
+    response['msg'] =  "token有效"
+    response['code'] = 200
+    data['exp'] = datetime.datetime.utcnow() + datetime.timedelta(minutes=3)
+    new_token = generate_token(data)
+    response['new_token'] = new_token
+    return response

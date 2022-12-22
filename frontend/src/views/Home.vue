@@ -104,15 +104,36 @@ import Cookies from 'js-cookie'
         return emailRegex.test(str);
       },
       handleSelect(index) {
+        let self = this
         // alert(this.form.role)
         // console.log(index)
-        if (index === '2') {
-          if (this.form.role === 'head') {
-            this.$router.push('/painfoh');
-          } else if (this.form.role === 'sale') {
-            this.$router.push('/painfos');
+        const old_token = Cookies.get('token')
+        axios.post('/api/refreshToken', {
+          token: old_token
+        })
+        .then(function (response) {
+          const code = response.data['code']
+          const msg = response.data['msg']
+          if (code === 200) {
+            const new_token = response.data['new_token']
+            Cookies.set('token', new_token, { expires: 7 });
+            // alert('hello')
+            // alert(index)
+            if (index === '2') {
+              if (self.form.role === 'head') {
+                self.$router.push('/painfoh');
+              } else if (self.form.role === 'sale') {
+                self.$router.push('/painfos');
+              }
+            }
+          }else {
+            alert(msg+",请返回登陆")
+            self.$router.push('/');
           }
-        }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
       }
     },
     mounted() {
