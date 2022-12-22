@@ -10,3 +10,7 @@ https://stackoverflow.com/questions/34186283/eslint-fast-way-to-solve-irregular-
 #### git丢弃本地修改的所有文件（新增、删除、修改
 https://blog.csdn.net/leedaning/article/details/51304690
 
+#### HEAD 游离状态的解决方案
+https://www.cnblogs.com/bigben0123/p/13753961.html
+
+
