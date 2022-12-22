@@ -14,7 +14,19 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: Home
-  }
+  },
+  // Product account information for head role
+  {
+    path: '/painfoh',
+    name: 'PAInfoH',
+    component: () => import('../views/PAInfoH.vue')
+  },
+  // Product account information for sale role
+  {
+    path: '/painfos',
+    name: 'PAInfoS',
+    component: () => import('../views/PAInfoS.vue')
+  },
 ]
 
 const router = new VueRouter({
