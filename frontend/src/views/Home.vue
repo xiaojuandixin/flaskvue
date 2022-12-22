@@ -34,6 +34,7 @@
   </div>
 </template>
     
+
 <script>
 import axios from 'axios'
 import Cookies from 'js-cookie'
