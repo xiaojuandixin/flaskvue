@@ -1,0 +1,413 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>已注销私募基金管理人公示 - 中国证券投资基金业协会</title>
+    <link rel="stylesheet" type="text/css" href="../../lib/dataTable/css/jquery.dataTables.css">
+
+    <link rel="stylesheet" href="../../common/css/font.css">
+    <link rel="stylesheet" href="../../common/css/reset.css">
+    <link rel="stylesheet" href="../../common/css/common.css">
+    <link rel="stylesheet" href="../../common/css/phone.css">
+    <link rel="stylesheet" href="../../common/css/common_self.css">
+    <script src="../../common/js/jquery.min.js"></script>
+    <script src="../../common/js/jquery-migrate.min.js"></script>
+    <script src="../../common/js/common.js"></script>
+    <script src="../../common/js/jquery.select-1.3.6.js"></script>
+    <script src="../../common/js/layer/layer.js"></script><link rel="stylesheet" href="https://gs.amac.org.cn/amac-infodisc/res/common/js/layer/theme/default/layer.css?v=3.1.1" id="layuicss-layer">
+    <script src="../../lib/laydate/laydate.js"></script><link rel="stylesheet" href="https://gs.amac.org.cn/amac-infodisc/res/lib/laydate/theme/default/laydate.css?v=5.0.9" id="layuicss-laydate">
+
+    <style type="text/css">
+        .w150 {
+            width: 150px;
+        }
+        .a1{
+            color: #173bf4;
+            /*font-size:1.1em;*/
+        }
+
+        .bthClick{
+            background-color: #c3d7f3 !important;
+        }
+
+        #dvccFundList_length {
+            margin-left: 10px;
+            margin-top: 6px;
+        }
+        #dvccFundList_length select {
+            width:70px;
+            padding: 5px 5px;
+        }
+    </style>
+
+    <script type="text/javascript" language="javascript" src="../../lib/dataTable/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" language="javascript" src="../../lib/dataTable/js/ellipses.js"></script>
+    <script type="text/javascript" language="javascript" src="../../lib/datepicker/WdatePicker.js"></script><link href="../../lib/datepicker/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" language="javascript" src="./js/ctr.js"></script>
+
+
+    <script type="text/javascript" language="javascript" src="../../common/js/xdate.js"></script>
+    <!--[if lt IE 8]>
+    <script type="text/javascript" language="javascript" src="../../common/js/json2.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" language="javascript" src="../../lib/jquery/plugins/jquery-ui-1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../lib/jquery/plugins/jquery-ui-1.11.4/jquery-ui.css">
+</head>
+
+<body>
+    <div class="mod-header">
+        <div class="wrap-layer">
+            <div class="left">
+                <a href="http://www.amac.org.cn" class="logo-a">
+                    <img src="../../common/images/logo.png">
+                </a>
+                <a href="http://gs.amac.org.cn">
+                    <img class="sublogo" src="../../common/images/sublogo.png">
+                </a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="mode-banner">
+        <div class="mode-inner">
+            <div class="banner-cnt">
+                <img src="../../common/images/banner.jpg">
+            </div>
+        </div>
+        <div class="inner-wraper">
+            <div class="mod-table">
+                <div class="mod-td">
+                    <div class="curmenu">
+                        已注销私募基金管理人公示
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-body query-page">
+        <div class="wrap-layer">
+            <div class="query-area" style="height:420px">
+                <div class="tit" style="width:150px">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><em></em><span>检索</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="form" style="margin-left:150px">
+                    <div class="form-list" style="margin-right:20px">
+                        <form action="" name="dvcc-fund-form">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <table class="css-table">
+                                            <colgroup>
+                                                <col width="19%">
+                                                <col width="15%">
+                                                <col width="15%">
+                                                <col width="19%">
+                                                <col width="15%">
+                                                <col width="17%">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <div class="inp">
+                                                            <input id="keyword" type="text" placeholderval="管理人名称/统一社会信用代码" class="tipcolor textParam">
+                                                        </div>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <div class="inp">
+                                                            <input id="sponsorNames" type="text" placeholderval="出资人" class="tipcolor textParam">
+                                                        </div>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <div class="inp">
+                                                            <input id="actualControllers" type="text" placeholderval="实际控制人" class="tipcolor textParam">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <div class="inp">
+                                                            <input id="seniorManagerNames" type="text" placeholderval="高管" class="tipcolor textParam">
+                                                        </div>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <div class="inp">
+                                                            <input id="fundNames" type="text" placeholderval="产品名称/S码" class="tipcolor textParam">
+                                                        </div>
+                                                    </td>
+                                                    <td colspan="2"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <div class="time inp">
+                                                            <div class="title">成立时间</div>
+                                                            <div style="line-height: 50px;">
+                                                                <div class="calendar" style="width: 130px;display: inline-block;vertical-align: middle;">
+                                                                    <input type="text" id="establishmentTimeFrom" class="dateParam" readonly="" lay-key="3">
+                                                                </div>
+                                                                <div class="calendar" style="width: 130px;display: inline-block;vertical-align: middle;">
+                                                                    <input type="text" id="establishmentTimeTo" class="dateParam" readonly="" lay-key="4">
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <div class="time inp">
+                                                            <div class="title">登记时间</div>
+                                                            <div style="line-height: 50px;">
+                                                                <div class="calendar" style="width: 130px;display: inline-block;vertical-align: middle;">
+                                                                    <input type="text" id="orgSignDateFrom" class="dateParam" readonly="" lay-key="5">
+                                                                </div>
+                                                                <div class="calendar" style="width: 130px;display: inline-block;vertical-align: middle;">
+                                                                    <input type="text" id="orgSignDateTo" class="dateParam" readonly="" lay-key="6">
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <div class="time inp">
+                                                            <div class="title">注销时间</div>
+                                                            <div style="line-height: 50px;">
+                                                                <div class="calendar" style="width: 120px;display: inline-block;vertical-align: middle;">
+                                                                    <input type="text" id="cancelDateFrom" class="dateParam" readonly="" lay-key="1">
+                                                                </div>
+                                                                <div class="calendar" style="width: 110px;display: inline-block;vertical-align: middle;">
+                                                                    <input type="text" id="cancelDateTo" class="dateParam" readonly="" lay-key="2">
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="inp">
+                                                            <div class="organ">
+                                                                <div class="title">注册地</div>
+                                                                <div class="select">
+                                                                    <div class="dropdown" id="regiProvinceFsc__jQSelect0" tabindex="0"><select class="mod-select" id="regiProvinceFsc" childlistid="regiProvince" style="display: none;">
+                                                                    </select><div class="dropselectbox"><h4 style="width: 137.219px;"></h4><ul style="width: 137.219px;"></ul></div></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="inp">
+                                                            <div class="organ">
+                                                                <div class="select">
+                                                                    <div class="dropdown" id="regiProvince__jQSelect1" tabindex="0"><select class="mod-select" id="regiProvince" childlistid="regiCity" valfield="name" style="display: none;">
+                                                                        <option value="">省</option>
+                                                                    </select><div class="dropselectbox"><h4 style="width: 113.75px;">省</h4><ul style="width: 113.75px;"></ul></div></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="inp">
+                                                            <div class="organ">
+                                                                <div class="select">
+                                                                    <div class="dropdown" id="regiCity__jQSelect2" tabindex="0"><select class="mod-select" id="regiCity" valfield="name" style="display: none;">
+                                                                        <option value="">市</option>
+                                                                    </select><div class="dropselectbox"><h4 style="width: 113.75px;">市</h4><ul style="width: 113.75px;"></ul></div></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="inp">
+                                                            <div class="organ">
+                                                                <div class="title">办公地</div>
+                                                                <div class="select">
+                                                                    <div class="dropdown" id="offiProvinceFsc__jQSelect3" tabindex="0"><select class="mod-select" id="offiProvinceFsc" childlistid="officeProvince" style="display: none;">
+                                                                    </select><div class="dropselectbox"><h4 style="width: 137.219px;"></h4><ul style="width: 137.219px;"></ul></div></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="inp">
+                                                            <div class="organ">
+                                                                <div class="select">
+                                                                    <div class="dropdown" id="officeProvince__jQSelect4" tabindex="0"><select class="mod-select" id="officeProvince" childlistid="officeCity" valfield="name" style="display: none;">
+                                                                        <option value="">省</option>
+                                                                    </select><div class="dropselectbox"><h4 style="width: 113.75px;">省</h4><ul style="width: 113.75px;"></ul></div></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="inp">
+                                                            <div class="organ">
+                                                                <div class="select">
+                                                                    <div class="dropdown" id="officeCity__jQSelect5" tabindex="0"><select class="mod-select" id="officeCity" valfield="name" style="display: none;">
+                                                                        <option value="">市</option>
+                                                                    </select><div class="dropselectbox"><h4 style="width: 134.25px;">市</h4><ul style="width: 134.25px;"></ul></div></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <div class="inp">
+                                                            <div class="organ">
+                                                                <div class="title">机构类型</div>
+                                                                <div class="select">
+                                                                    <div class="dropdown" id="primaryInvestType__jQSelect6" tabindex="0"><select class="mod-select" id="primaryInvestType" style="display: none;">
+                                                                        <option value="">全部</option>
+                                                                        <option value="smzqtzjjglr">私募证券投资基金管理人</option>
+                                                                        <option value="smgqcytzjjglr">私募股权、创业投资基金管理人</option>
+                                                                        <option value="qtsmtzjjglr">其他私募投资基金管理人</option>
+                                                                        <option value="smzcpzlglr">私募资产配置类管理人</option>
+                                                                        <option value="wtbglrlx">未填报管理人类型</option>
+                                                                    </select><div class="dropselectbox"><h4 style="width: 300.125px;">全部</h4><ul style="width: 300.125px;"></ul></div></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <div class="inp">
+                                                            <div class="organ">
+                                                                <div class="title">未在系统提交清算的产品</div>
+                                                                <div class="select">
+                                                                    <div class="dropdown" id="nonClearFunds__jQSelect7" tabindex="0"><select class="mod-select" id="nonClearFunds" style="display: none;">
+                                                                        <option value="">全部</option>
+                                                                        <option value="Y">存在</option>
+                                                                        <option value="N">不存在</option>
+                                                                    </select><div class="dropselectbox"><h4 style="width: 259.219px;">全部</h4><ul style="width: 259.219px;"></ul></div></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td colspan="2"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <div class="inp">
+                                                            <div class="organ">
+                                                                <div class="title"><em class="tips" onclick="layerPage('cancelInfoHint')"></em>注销类型</div>
+                                                                <div class="select">
+                                                                    <div class="dropdown" id="status__jQSelect8" tabindex="0"><select class="mod-select" id="status" childlistid="adminCancelType" dynamic="yes" style="display: none;">
+                                                                        <option value="">全部</option>
+                                                                    </select><div class="dropselectbox"><h4 style="width: 281.125px;">全部</h4><ul style="width: 281.125px;"></ul></div></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <div class="inp">
+                                                            <div class="organ">
+                                                                <div class="select">
+                                                                    <div class="dropdown" id="adminCancelType__jQSelect9" tabindex="0"><select class="mod-select" id="adminCancelType" style="display: none;">
+                                                                        <option value="">全部</option>
+                                                                    </select><div class="dropselectbox"><h4 style="width: 323.5px;">全部</h4><ul style="width: 323.5px;"></ul></div></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <div class="btn-group" style="margin-left: 80px">
+                                                            <div class="query-btn button" style="width: 120px"><a href="javascript:void(0);" onclick="javascript:reload();"><span>查询</span></a></div>
+                                                            <div class="reset-btn button" style="width: 120px"><a href="javascript:void(0);" onclick="javascript:clearCondition();"><span>清空条件</span></a></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </form>
+                    </div>
+                <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="tips-body" id="tipsbody"></div>
+            <div class="table-list">
+                <div class="table-response">
+                    <div id="dvccFundList_wrapper" class="dataTables_wrapper no-footer"><div class="top"></div><table class="list dataTable no-footer" id="dvccFundList" background="../../common/images/yzx.png" align="center" style="background-repeat: repeat" role="grid" aria-describedby="dvccFundList_info">
+                        <thead>
+                        <tr role="row"><th width="10%" class="sorting_disabled center" rowspan="1" colspan="1">编号</th><th width="27%" class="sorting_disabled center" rowspan="1" colspan="1">管理人名称</th><th width="18%" class="sorting_disabled center" rowspan="1" colspan="1">统一社会信用代码</th><th width="10%" class="sorting_disabled center" rowspan="1" colspan="1">成立时间</th><th width="10%" class="sorting_disabled center" rowspan="1" colspan="1">登记时间</th><th width="10%" class="sorting_disabled center" rowspan="1" colspan="1">注销时间</th><th width="15%" class="sorting_disabled center" rowspan="1" colspan="1">注销类型</th></tr>
+                        </thead>
+                    <tbody><tr role="row" class="odd"><td class=" center">1</td><td class=" center"><a href="1702071153109489.html" target="_blank">深圳前海惠胜资产管理有限公司</a></td><td class=" center">914403003351098926</td><td class=" center">2015-04-10</td><td class=" center">2017-05-18</td><td class=" center">2022-12-23</td><td class=" center">主动注销</td></tr><tr role="row" class="even"><td class=" center">2</td><td class=" center"><a href="1707071447108613.html" target="_blank">中投国宏（北京）资产管理有限公司</a></td><td class=" center">911101083443609822</td><td class=" center">2015-06-04</td><td class=" center">2017-09-28</td><td class=" center">2022-12-23</td><td class=" center">主动注销</td></tr><tr role="row" class="odd"><td class=" center">3</td><td class=" center"><a href="101000044018.html" target="_blank">深圳华澳前海资本管理有限公司</a></td><td class=" center">914403003593497782</td><td class=" center">2015-11-16</td><td class=" center">2016-06-28</td><td class=" center">2022-12-19</td><td class=" center">主动注销</td></tr><tr role="row" class="even"><td class=" center">4</td><td class=" center"><a href="2104271810102347.html" target="_blank">国新盛康私募基金管理（北京）有限公司</a></td><td class=" center">91110000MA004W3X59</td><td class=" center">2016-04-15</td><td class=" center">2021-06-18</td><td class=" center">2022-12-19</td><td class=" center">依公告注销</td></tr><tr role="row" class="odd"><td class=" center">5</td><td class=" center"><a href="1908081012108685.html" target="_blank">共青城斯科私募基金管理有限公司</a></td><td class=" center">91360405MA3802M48A</td><td class=" center">2018-06-21</td><td class=" center">2021-06-18</td><td class=" center">2022-12-19</td><td class=" center">依公告注销</td></tr><tr role="row" class="even"><td class=" center">6</td><td class=" center"><a href="101000011344.html" target="_blank">山东共托投资控股有限公司</a></td><td class=" center">30715878-5</td><td class=" center">2014-08-06</td><td class=" center">2015-05-15</td><td class=" center">2022-12-19</td><td class=" center">主动注销</td></tr><tr role="row" class="odd"><td class=" center">7</td><td class=" center"><a href="101000036330.html" target="_blank">斐查兹（上海）资产管理有限公司</a></td><td class=" center">35075971-1</td><td class=" center">2015-08-29</td><td class=" center">2015-10-16</td><td class=" center">2022-12-19</td><td class=" center">主动注销</td></tr><tr role="row" class="even"><td class=" center">8</td><td class=" center"><a href="1702172026103952.html" target="_blank">东莞市威尔久投资管理有限公司</a></td><td class=" center">91441900MA4UNQP07B</td><td class=" center">2016-04-21</td><td class=" center">2017-04-21</td><td class=" center">2022-12-19</td><td class=" center">主动注销</td></tr><tr role="row" class="odd"><td class=" center">9</td><td class=" center"><a href="101000012034.html" target="_blank">瑞弛（北京）国际投资基金有限公司</a></td><td class=" center">31816681-X</td><td class=" center">2014-10-31</td><td class=" center">2015-01-29</td><td class=" center">2022-12-16</td><td class=" center">主动注销</td></tr><tr role="row" class="even"><td class=" center">10</td><td class=" center"><a href="1711301709101937.html" target="_blank">上海红曦私募基金管理有限公司</a></td><td class=" center">91440400MA4X7WKE18</td><td class=" center">2017-10-17</td><td class=" center">2018-02-11</td><td class=" center">2022-12-16</td><td class=" center">主动注销</td></tr><tr role="row" class="odd"><td class=" center">11</td><td class=" center"><a href="101000051791.html" target="_blank">深圳市亿添景富基金管理有限公司</a></td><td class=" center">91440300359316845E</td><td class=" center">2015-11-13</td><td class=" center">2016-05-24</td><td class=" center">2022-12-16</td><td class=" center">主动注销</td></tr><tr role="row" class="even"><td class=" center">12</td><td class=" center"><a href="101000006980.html" target="_blank">湖南高新创投财富管理有限公司</a></td><td class=" center">06635494-4</td><td class=" center">2013-04-10</td><td class=" center">2014-11-19</td><td class=" center">2022-12-16</td><td class=" center">主动注销</td></tr><tr role="row" class="odd"><td class=" center">13</td><td class=" center"><a href="101000033090.html" target="_blank">深圳木水资本管理有限公司</a></td><td class=" center">91440300349814103Q</td><td class=" center">2015-07-30</td><td class=" center">2015-09-02</td><td class=" center">2022-12-16</td><td class=" center">主动注销</td></tr><tr role="row" class="even"><td class=" center">14</td><td class=" center"><a href="1709131438104308.html" target="_blank">深圳市恒合博瑞资产管理有限公司</a></td><td class=" center">91440300305842903X</td><td class=" center">2014-05-06</td><td class=" center">2018-03-01</td><td class=" center">2022-12-16</td><td class=" center">主动注销</td></tr><tr role="row" class="odd"><td class=" center">15</td><td class=" center"><a href="101000039618.html" target="_blank">深圳前海广发恒泰基金管理有限公司</a></td><td class=" center">914403003578774461</td><td class=" center">2015-02-09</td><td class=" center">2015-12-09</td><td class=" center">2022-12-16</td><td class=" center">主动注销</td></tr><tr role="row" class="even"><td class=" center">16</td><td class=" center"><a href="101000039909.html" target="_blank">深圳统一宇宙投资管理有限公司</a></td><td class=" center">91440300349792557X</td><td class=" center">2015-08-09</td><td class=" center">2016-01-14</td><td class=" center">2022-12-16</td><td class=" center">主动注销</td></tr><tr role="row" class="odd"><td class=" center">17</td><td class=" center"><a href="101000051914.html" target="_blank">中根（深圳）基金管理有限公司</a></td><td class=" center">91440300360131274W</td><td class=" center">2016-03-02</td><td class=" center">2016-04-25</td><td class=" center">2022-12-16</td><td class=" center">主动注销</td></tr><tr role="row" class="even"><td class=" center">18</td><td class=" center"><a href="101000028392.html" target="_blank">南京喜禾投资管理有限公司</a></td><td class=" center">30246909-0</td><td class=" center">2014-10-28</td><td class=" center">2015-07-17</td><td class=" center">2022-12-16</td><td class=" center">主动注销</td></tr><tr role="row" class="odd"><td class=" center">19</td><td class=" center"><a href="101000012927.html" target="_blank">昌戎投资管理（上海）有限公司</a></td><td class=" center">07116534-7</td><td class=" center">2013-06-06</td><td class=" center">2015-01-29</td><td class=" center">2022-12-16</td><td class=" center">主动注销</td></tr><tr role="row" class="even"><td class=" center">20</td><td class=" center"><a href="101000009239.html" target="_blank">新余中科瑞信创业投资合伙企业（有限合伙）</a></td><td class=" center">05065993-8</td><td class=" center">2012-07-13</td><td class=" center">2014-12-24</td><td class=" center">2022-12-16</td><td class=" center">主动注销</td></tr></tbody></table><div class="bottom"><div class="dataTables_info" id="dvccFundList_info" role="status" aria-live="polite">共 19139 条记录，共957页</div><div class="dataTables_length" id="dvccFundList_length"><label>显示<select name="dvccFundList_length" aria-controls="dvccFundList" class=""><option value="20">20</option><option value="10">10</option><option value="50">50</option><option value="100">100</option></select>条</label></div><div class="dataTables_paginate paging_ellipses" id="dvccFundList_paginate"><a class="paginate_button first">首页</a><a class="paginate_button previous">&lt;</a><span class="paginate_numbers"><a class="paginate_button paginate_number current" active="true" disabled="disabled">1</a><a class="paginate_button paginate_number">2</a><a class="paginate_button paginate_number">3</a><a class="paginate_button paginate_number">4</a><a class="paginate_button paginate_number">5</a><span class="paginate_ellipsis">...</span></span><a class="paginate_button next">&gt;</a><a class="paginate_button last">尾页</a><input style="width:30px;" type="text" name="goInput" id="goInput"><button class="btn-go"></button></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="wrap-layer">
+            <div class="bom-logo-wrap">
+                <div class="bom-logo"><a href="#"><img src="../../common/images/bom_logo.png" alt=""></a></div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+
+            <div class="bom-contacts">
+                <span class="bom-tel">私募基金咨询热线：400-017-8200</span>
+                <span class="bom-tel">基金从业人员管理咨询服务热线：021-61948893</span>
+                <span class="bom-addr">北京市西城区金融大街20号交通银行大厦B座9层中国基金业协会</span>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="mod-copy">
+            <div class="wrap-layer">
+                <div class="copys"><i>© 版权所有：中国证券投资基金业协会 京ICP备16045718号</i><img style="vertical-align:middle;margin-left:20px;" src="../../common/images/ipv6.png" alt=""><i id="clickCount" style="margin-left: 300px">浏览量：186059</i><span>京公网安备 11010202007223号</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="layer-content" id="cancelInfoHint" style="display: none;">
+        <p>1、私募基金管理人主动申请注销登记的，经协会认定后同意其申请并对外公示，但因涉嫌违法违规事项正在被协会调查的私募基金管理人除外。私募基金管理人自注销申请通过之日起6个月内不得重新申请登记；期满后重新申请登记且符合登记条件的予以登记。</p>
+        <p>2、依据《关于进一步规范私募基金管理人登记若干事项的公告》新登记的私募基金管理人在办结登记手续之日起6个月内仍未备案首只私募基金产品被注销的，若因真实业务需要，可按要求重新申请私募基金管理人登记。</p>
+        <p>3、协会注销包含因纪律处分、异常经营及失联等情形注销的私募基金管理人。因失联被注销私募基金管理人登记的，在说明失联情况后，经协会认可，可以再次申请登记为私募基金管理人。因纪律处分或异常经营情形等被撤销或者被注销的私募基金管理人，注销后不得重新登记。</p>
+    </div>
+    <div class="layui-layer layui-layer-page layui-layer-demo" id="layui-layer1" type="page" times="1" showtime="0" contype="object" style="z-index: 19891015; width: 360px; top: 174.5px; left: 39.75px;"><div class="layui-layer-title" style="cursor: move; text-align: left; padding-left: 30px;">中国证券投资基金业协会提示</div><div id="" class="layui-layer-content"><div id="firstCancelTip" style="" class="layui-layer-wrap">
+        <p class="mb15" style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;已注销机构不再具有私募基金管理人资格，未经登记任何单位或个人不得使用“基金”或者“基金管理”字样或者近似名称进行证券投资活动。已注销机构和相关当事人应当根据《证券投资基金法》、《私募投资基金监督管理暂行办法》和基金合同的约定，妥善处置在管基金财产，依法保障投资者合法利益。</p>
+        <p class="mb15" style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;投资者应当持续关注已注销机构的诚信合规情况，通过基金合同约定的纠纷解决机制和相关法律渠道维护自身合法权益。</p>
+    </div></div><span class="layui-layer-setwin"></span><div class="layui-layer-btn layui-layer-btn-c"><a class="layui-layer-btn0" style="border-color: white; background-color: rgb(255, 255, 255); border-width: 0px; color: rgb(255, 153, 0);">5 S</a></div><span class="layui-layer-resize"></span></div>
+    <script>
+        if(window.innerWidth>480){
+            $(".mod-select").sSelect();
+        }
+        function toggleclick(){
+            if($("#tipsbody").hasClass('tips-body-open')){
+                $("#tipsbody").removeClass('tips-body-open');
+            }else{
+                $("#tipsbody").addClass('tips-body-open')
+            }
+        }
+        firstLoadTip('firstCancelTip', '中国证券投资基金业协会提示');
+        function layerPage(id){
+            var index = layer.open({
+                type: 1,
+                skin: 'layui-layer-demo', //样式类名
+                shadeClose: true,
+                content: $('#'+id)
+            });
+        }
+    </script><div class="layui-layer-shade" id="layui-layer-shade1" times="1" style="z-index: 19891014; background-color: rgb(0, 0, 0); opacity: 0.3;"></div><div class="layui-layer-move"></div>
+    <style>
+        .table-list tr{
+            background-color: transparent !important;
+        }
+        .table-list tr td{
+            background-color: transparent !important;
+        }
+        .table-list tr .even{
+            background-color: transparent !important;
+        }
+    </style>
+
+
+
+</body></html>

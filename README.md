@@ -22,3 +22,9 @@ https://cloud.tencent.com/developer/article/1481047?from=15425
 #### Ubuntu线上无界面服务器 使用selenium chrome
 https://bbs.huaweicloud.com/blogs/155518
 
+#### Selenium Python 教程
+https://zhuanlan.zhihu.com/p/111859925
+
+#### 关于新版本selenium定位元素报错
+https://blog.csdn.net/m0_49076971/article/details/126233151
+
