@@ -13,4 +13,12 @@ https://blog.csdn.net/leedaning/article/details/51304690
 #### HEAD 游离状态的解决方案
 https://www.cnblogs.com/bigben0123/p/13753961.html
 
+#### Python基于pandas爬取网页表格数据
+https://cloud.tencent.com/developer/article/1737557?from=15425
+
+#### xpath获取指定数据
+https://cloud.tencent.com/developer/article/1481047?from=15425
+
+#### Ubuntu线上无界面服务器 使用selenium chrome
+https://bbs.huaweicloud.com/blogs/155518
 
